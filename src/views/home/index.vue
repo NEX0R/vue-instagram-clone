@@ -1,8 +1,9 @@
 <template>
   <div class="home">
     <h1>Home</h1>
-    <CustomText tag="h1"> Home </CustomText>
+    <CustomText tag="p"> This is a custom text component. </CustomText>
   </div>
+
 </template>
 
 <script>
