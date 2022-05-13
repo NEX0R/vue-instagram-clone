@@ -1,15 +1,86 @@
-<template lang="">
-     <header>
-      <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/direct">Direct</router-link> |
-      <router-link to="/explore">Explore</router-link> |
-      <router-link to="/profile">Profile</router-link>
-    </nav>
-    </header>
+<template>
+  <header class="header">
+    <Container class="header-inner">
+      <router-link to="/" class="logo">Instagram</router-link>
+
+      <form class="search">
+        <input type="text" placeholder="Search" />
+      </form>
+
+      <nav class="navigation">
+        <router-link to="/">
+          <IconHomeFill v-if="$route.name === 'Home'" />
+          <IconHome v-else />
+        </router-link>
+        <router-link to="/direct">
+          <IconDirectFill v-if="$route.name === 'Direct'" />
+          <IconDirect v-else />
+        </router-link>
+        <router-link to="/explore">
+          <IconExploreFill v-if="$route.name === 'Explore'" />
+          <IconExplore v-else />
+        </router-link>
+        <router-link to="/profile">Profile</router-link>
+      </nav>
+    </Container>
+  </header>
 </template>
+
 <script>
+import IconHome from "@/icons/home.svg";
+import IconHomeFill from "@/icons/home-fill.svg";
+import IconDirect from "@/icons/direct.svg";
+import IconDirectFill from "@/icons/direct-fill.svg";
+import IconExplore from "@/icons/explore.svg";
+import IconExploreFill from "@/icons/explore-fill.svg";
+import Container from "./Container.vue";
 export default {
-    name:'MainHeader'
-}
+  name: "MainHeader",
+  components: {
+    IconHome,
+    IconHomeFill,
+    Container,
+    IconDirect,
+    IconDirectFill,
+    IconExplore,
+    IconExploreFill,
+  },
+};
 </script>
+
+<style scoped>
+.header {
+  border-bottom: 1px solid rgb(var(--b6a));
+}
+.header-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  height: 60px;
+
+}
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.search {
+  text-align: center;
+}
+.search input {
+  width: 215px;
+  height: 28px;
+  border: 1px solid rgb(var(--b6a));
+  border-radius: 3px;
+  background-color: rgb(var(--b3f));
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.navigation {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.navigation a {
+  margin-left: 20px;
+}
+</style>
