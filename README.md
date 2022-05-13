@@ -26,8 +26,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### TODOS
 - [x] Vue projesini oluştur.
-- [ ] CSS alt yapısını ve svgleri oluştur.
-- [ ] sayfaları oluştur ve master-page
-- [ ] header tasarımı
+- [x] CSS alt yapısını ve svgleri oluştur.
+- [x] sayfaları oluştur ve master-page
+- [x] header tasarımı
 - [ ] anasayfadaki stories alanı
-- [ ] anasayfadaki post componenti
+- [-] anasayfadaki post componenti
